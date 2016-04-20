@@ -145,6 +145,12 @@
 	self.highlightedOverlay.frame = self.bounds;
 }
 
+- (void)setNeedsDisplay {
+    [super setNeedsDisplay];
+    [self.normalOverlay setNeedsDisplay];
+    [self.highlightedOverlay setNeedsDisplay];
+}
+
 - (void)createOverlays {
 	
 	if (self.style == AYVibrantButtonStyleFill) {
